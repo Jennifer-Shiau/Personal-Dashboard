@@ -1,0 +1,81 @@
+<html>
+   <head>
+      <title>Homepage</title>
+      <style>
+         img
+         {
+            position: fixed;
+            top: 0px;
+            left: 0px;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+         }
+         input[type="text"]
+         {
+            border: none;
+            border-radius: 25px;
+            padding-left: 20px;
+         }
+      </style>
+      <script type="text/javascript">
+         function rand()
+         {
+            var n = 5;
+            var backgrounds = [];
+            for(var i=0;i<n;i++)
+            {
+               var file = './wallpapers/' + i + '.jpg';
+               backgrounds.push(file);
+            }
+            r = Math.floor(Math.random()*n);
+            var img = '<img src=\"';
+            img += backgrounds[r];
+            img += '\"/>';
+            return img;
+         }
+         function getTime()
+         {
+            var today = new Date();
+            var h = today.getHours();
+            var m = today.getMinutes();
+            var s = today.getSeconds();
+            // add a zero in front of numbers < 10
+            m = checkTime(m);
+            s = checkTime(s);
+            time = h + ":" + m + ":" + s
+            document.getElementById('time').innerHTML = time;
+            
+            months = ['January', 'February', 'March', 'April', 'May', 'June', 'July',
+                      'August', 'September', 'October', 'November', 'December'];
+            day = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+            //date = day[today.getDay()] + '  ' + (today.getMonth()+1) + '/' + today.getDate() + '/' + today.getFullYear();
+            date = day[today.getDay()] + ', ' + months[today.getMonth()] + ' ' + today.getDate() + ', ' + today.getFullYear();
+            document.getElementById('date').innerHTML = date;
+            setTimeout('getTime()', 1000);
+         }
+         function checkTime(i)
+         {
+            if(i<10)
+            {
+               i = "0" + i;
+            }
+            return i;
+         }
+      </script>
+   </head>
+   <script type="text/javascript">
+      document.write(rand());
+   </script>
+   <body onload="getTime()">
+      <big style="font-size:132px;"><br /></big>
+      <big style="font-size:144px; color:rgba(255, 255, 255, 0.9);"><b><font face="Arial"><center id="time"></center></font></b></big>
+      <big style="font-size:40px; color:rgba(255, 255, 255, 0.9);"><b><font face="Menlo"><center id="date"></center></font></b></big>
+      <big style="font-size:40px;"><br /></big>
+   </body>
+   <form action="https://google.com/search" method="get">
+      <center><input type="hidden" name="sitesearch" /></center>
+      <center><input type="text" name="q" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" style="font-size:22px; height:50px; width:500px; background:rgba(230, 230, 230, 0.4);" /></center>
+   </form>
+</html>
+
