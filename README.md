@@ -25,8 +25,8 @@ git clone https://github.com/Jennifer-Shiau/Personal-Dashboard.git
 ## Step 2
 Copy the path of `Personal-Dashboard/homepage.html`
 - On Mac, you can
-        1. Open the folder `Personal-Dashboard`
-        2. Click `homepage.html` and press `option + command + c`
+    1. Open the folder `Personal-Dashboard`
+    2. Click `homepage.html` and press `option + command + c`
 
 ## Step 3
 ### Safari
